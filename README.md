@@ -131,6 +131,7 @@ Response:
 {
   "message": "Todo deleted successfully"
 }
+```
 
 ## Error Handling
 
