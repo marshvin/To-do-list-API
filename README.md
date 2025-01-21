@@ -32,7 +32,7 @@ A simple REST API for managing a to-do list using Node.js, Express, and MongoDB.
 3. Create a .env file in the root directory:
    ```bash
    MONGO_URI=your-mongodb-uri
-   PORT=3000
+   PORT=5000
    ```
 
 4. Start the server:
@@ -46,17 +46,17 @@ Base URL: `/api/todos`
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET    | /        | Get all to-dos |
-| POST   | /        | Create a new to-do |
-| GET    | /:id     | Get a specific to-do |
-| PUT    | /:id     | Update a to-do |
-| DELETE | /:id     | Delete a to-do |
+| GET    | /list        | Get all to-dos |
+| POST   | /create        | Create a new to-do |
+| GET    | /find/:id     | Get a specific to-do |
+| PUT    | /update/:id     | Update a to-do |
+| DELETE | /remove/:id     | Delete a to-do |
 
 ## API Usage Examples
 
 ### Get All To-Dos
 ```bash
-GET /api/todos
+GET /api/todos/list 
 ```
 
 Response:
@@ -96,6 +96,41 @@ Response:
   "updatedAt": "2023-07-15T11:00:00.000Z"
 }
 ```
+
+### Update a To-Do
+```bash
+PUT /api/todos/update/60f1a2b3c4d5e6f7g8h9i0j2
+Content-Type: application/json
+
+{
+  "title": "Updated task",
+  "description": "Updated description",
+  "completed": true
+}
+```
+
+Response:
+```json
+{
+  "_id": "60f1a2b3c4d5e6f7g8h9i0j2",
+  "title": "Updated task",
+  "description": "Updated description",
+  "completed": true,
+  "createdAt": "2023-07-15T11:00:00.000Z",
+  "updatedAt": "2023-07-15T11:30:00.000Z"
+}
+```
+
+### Delete a To-Do
+```bash
+DELETE /api/todos/remove/60f1a2b3c4d5e6f7g8h9i0j2
+```
+
+Response:
+```json
+{
+  "message": "Todo deleted successfully"
+}
 
 ## Error Handling
 
