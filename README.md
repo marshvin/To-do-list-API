@@ -1,6 +1,6 @@
 # To-Do List REST API
 
-A simple REST API for managing a to-do list using Node.js, Express, and MongoDB.
+A simple REST API for managing a to-do list using Node.js, Express, and MongoDB Deployed on Render.
 
 ## Features
 
@@ -9,6 +9,7 @@ A simple REST API for managing a to-do list using Node.js, Express, and MongoDB.
 - Express.js backend
 - RESTful API endpoints
 - Environment variable configuration
+- Deployment on Render
 
 ## Prerequisites
 
@@ -39,6 +40,28 @@ A simple REST API for managing a to-do list using Node.js, Express, and MongoDB.
    ```bash
    npm start
    ```
+
+## Testing with Deployed Server
+
+You can test the API endpoints using the deployed server at:
+Base URL: `https://to-do-list-api-uepn.onrender.com/api/todos`
+
+### Quick Test Examples
+
+
+1. Create a new todo:
+   ```bash
+   curl -X POST https://to-do-list-api-uepn.onrender.com/api/todos/create \
+   -H "Content-Type: application/json" \
+   -d '{"title": "Test todo", "description": "Testing the deployed API", "completed": false}'
+   ```
+
+2. Using Postman:
+   - Import the base URL: `https://to-do-list-api-uepn.onrender.com/api/todos`
+   - Test different endpoints as documented in the API Usage Examples section
+   - Make sure to set the Content-Type header to `application/json` for POST and PUT requests
+
+Note: The server might take a few seconds to respond on the first request as it spins up from sleep mode.
 
 ## API Endpoints
 
