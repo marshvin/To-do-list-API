@@ -98,7 +98,7 @@ Response:
 
 ### Create a To-Do
 ```bash
-POST /api/todos
+POST /api/todos/create
 Content-Type: application/json
 
 {
